@@ -78,12 +78,22 @@ function sortWealth(){
     data.sort((a,b) => b.money - a.money)
     updateDOM();
 }
+
+function calculateWealth(){
+    const wealth = data.reduce((acc, user) => (acc+=user.money), 0);
+    const wealthElement = document.createElement('div');
+    wealthElement.innerHTML = `<h3>Total wealth: <strong>${formatMoney(wealth)}</strong> </h3>`
+
+    main.appendChild(wealthElement);
+    
+}
 //Event listeners
 
 addUserBtn.addEventListener('click', getRandomUser);
 doubleBtn.addEventListener('click',doubleMoney);
 showMillionairesBtn.addEventListener('click',showMillionaires);
 sortBtn.addEventListener('click', sortWealth);
+calculateWealthBtn.addEventListener('click',calculateWealth)
 
 
 
