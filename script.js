@@ -66,12 +66,21 @@ function doubleMoney(){
 }
 
 
+function showMillionaires(){
+    data = data.filter(user=> user.money > 1000000)
+
+    updateDOM();
+
+}
+
+
 
 //Event listeners
 
 addUserBtn.addEventListener('click', getRandomUser);
 doubleBtn.addEventListener('click',doubleMoney);
 showMillionairesBtn.addEventListener('click',showMillionaires);
+sortBtn.addEventListener('click', sortWealth);
 
 
 
