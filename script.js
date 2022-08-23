@@ -74,7 +74,10 @@ function showMillionaires(){
 }
 
 
-
+function sortWealth(){
+    data.sort((a,b) => b.money - a.money)
+    updateDOM();
+}
 //Event listeners
 
 addUserBtn.addEventListener('click', getRandomUser);
